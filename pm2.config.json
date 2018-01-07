@@ -1,0 +1,14 @@
+{
+  "name"   : "pspgbhu-server",
+  "script" : "bin/www",
+  "watch": false,
+  "env": {
+      "NODE_ENV": "development",
+      "PORT": "1888"
+  },
+  "out_file": "/export/Logs/pspgbhu-server/out.log",
+  "error_file": "/export/Logs/pspgbhu-server/err.log",
+  "merge_logs": true,
+  "log_date_format": "YYYY-MM-DD HH:mm Z",
+  "max_memory_restart" : "512M"
+}
