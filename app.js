@@ -32,6 +32,11 @@ app.use(async (ctx, next) => {
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 
+app.use(async (ctx, next) => {
+  await next();
+  console.log('ctx.body:', ctx.body);
+});
+
 // routes
 app.use(api.routes(), api.allowedMethods());
 

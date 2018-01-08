@@ -13,13 +13,11 @@ function query(sql) {
     pool.getConnection((err, connection) => {
 
       if (err) {
-        connection.release();
         reject(err);
         return;
       }
 
       connection.query(sql, (err, res, fields) => {
-
         if (err) {
           connection.release();
           reject(err);
