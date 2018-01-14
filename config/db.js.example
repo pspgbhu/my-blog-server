@@ -1,0 +1,9 @@
+const prod = process.env.NODE_ENV === 'production';
+const config = {
+  host: '',
+  user: '',
+  password: '',
+  database: '',
+};
+
+module.exports = config;
