@@ -32,4 +32,4 @@ function query(sql) {
 }
 
 
-module.exports = { query };
+module.exports = { query, pool };
