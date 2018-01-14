@@ -1,14 +1,23 @@
+# 博客后端服务
+
+目前完成如下服务：
+
+[x] 用户评论接口
+[ ] 阅读统计
+
 ## 环境安装
+
 ```bash
 pm2 install pm2-logrotate  # 安装
 pm2 set pm2-logrotate:retain 30    # 保留服务器 30 天日志
 pm2 set pm2-logrotate:workerInterval 60   #  60秒检测一次，根据 max\_size 的值来检测是否需要日志分割。
 ```
+
 ## API
 
-| 说明 | 参数 | 接口 | 请求方式 | 返回值 |
-| --- | ---- | --- | ------- | ---- |
-| 发表留言 | `{ name<String>, email<String>, article<String>, text<String> }` | /api/v1/message | post | JSON `{ code<Number>, msg<String> }` |
+| 说明 | 接口 | 请求方式 |
+| --- | --- | ------- |
+| 发表留言 |  /api/v1/message | post |
 
 
 ## code 码
