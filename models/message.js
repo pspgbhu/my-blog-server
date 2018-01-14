@@ -1,4 +1,6 @@
-const { query } = require('../libs/db');
+const { query, pool } = require('../libs/db');
+
+const escape = pool.escape.bind(pool);
 
 const TABLE = 'messages';
 
@@ -9,7 +11,7 @@ exports.post = async ({ article, name, email = '', text = '' }) => {
 
   const sql = `INSERT INTO
     ${TABLE} (article, name, email, text)
-    VALUES  (${[article, name, email, text].map(item => `"${item}"`).join(',')})`;
+    VALUES  (${escape([article, name, email, text])})`;
 
   console.log('SQL:', sql);
 
@@ -27,7 +29,7 @@ exports.getmsgByArticle = async (article) => {
   }
 
   const sql = `SELECT * FROM ${TABLE}
-    WHERE article = "${article}" and status = 1
+    WHERE article = ${escape(article)} and status = 1
     ORDER BY create_time DESC
   `;
 
