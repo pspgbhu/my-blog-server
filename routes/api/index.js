@@ -4,6 +4,7 @@ const message = require('./message');
 
 module.exports = router;
 
+// API 统一前缀
 router.prefix(API_PREFIX);
 
 router.get('/', (ctx) => {

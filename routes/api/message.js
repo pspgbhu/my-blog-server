@@ -7,6 +7,7 @@ router.prefix('/message');
 
 /**
  * 读取评论
+ * query: { #article<String> }
  */
 router.get('/', async ctx => {
   const { article } = ctx.query;
@@ -18,6 +19,7 @@ router.get('/', async ctx => {
 
 /**
  * 发表评论
+ * body: { #name<String>, #email<String>, #article<String>, #text<String> }
  */
 router.post('/', async ctx => {
   const body = ctx.request.body;

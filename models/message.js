@@ -27,7 +27,7 @@ exports.getmsgByArticle = async (article) => {
   }
 
   const sql = `SELECT * FROM ${TABLE}
-    WHERE article = "${article}"
+    WHERE article = "${article}" and status = 1
     ORDER BY create_time DESC
   `;
 
