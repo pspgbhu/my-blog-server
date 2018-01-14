@@ -1,10 +1,10 @@
 const Koa = require('koa');
 const json = require('koa-json');
-const onerror = require('koa-onerror');
 const bodyparser = require('koa-bodyparser');
 const logger = require('koa-logger');
 
 const cors = require('./middlewares/cors');
+const err = require('./middlewares/err');
 
 require('./libs/db');
 
@@ -13,7 +13,7 @@ const api = require('./routes/api');
 const app = new Koa();
 
 // error handler
-onerror(app);
+app.use(err());
 
 app.use(cors());
 
